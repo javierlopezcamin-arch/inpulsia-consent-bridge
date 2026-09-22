@@ -12,7 +12,7 @@
  * Domain Path:       /languages
  * Requires PHP:      7.4
  * Requires at least: 5.8
- * Update URI:        https://github.com/TU-USUARIO/inpulsia-consent-bridge
+ * Update URI:        https://github.com/javierlopezcamin-arch/inpulsia-consent-bridge
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ define( 'ICB_VERSION', '2.7.0' );
 // GitHub repo that publishes the releases ("usuario/repo"). Can be overridden in wp-config.php.
 // Private repo → each site also needs: define( 'ICB_GITHUB_TOKEN', 'github_pat_...' ); in wp-config.php.
 if ( ! defined( 'ICB_GITHUB_REPO' ) ) {
-	define( 'ICB_GITHUB_REPO', 'TU-USUARIO/inpulsia-consent-bridge' );
+	define( 'ICB_GITHUB_REPO', 'javierlopezcamin-arch/inpulsia-consent-bridge' );
 }
 define( 'ICB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ICB_URL', plugin_dir_url( __FILE__ ) );
