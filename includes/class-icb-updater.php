@@ -5,9 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  * Self-hosted updates from GitHub Releases.
  *
  * - Repo:  ICB_GITHUB_REPO  ("usuario/repo"), defined in the main plugin file.
- * - Token: ICB_GITHUB_TOKEN, defined in each site's wp-config.php (private repos only).
- *          Use a fine-grained personal access token scoped to this single repo with
- *          "Contents: Read-only". It is only ever sent to api.github.com.
+ * - Token: not needed — the repo is public. ICB_GITHUB_TOKEN (wp-config.php) is only an
+ *          optional fallback if the repo is ever made private; it is only sent to api.github.com.
+ *          Public repos are subject to GitHub's 60 req/h per-IP API limit; the 6h cache keeps
+ *          each site at ~4 requests/day.
  *
  * Flow: WordPress' normal update check → `update_plugins_github.com` (Update URI header)
  * → we read /releases/latest → if the tag is newer than ICB_VERSION, WordPress shows

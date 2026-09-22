@@ -21,8 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'ICB_VERSION', '2.7.0' );
 
-// GitHub repo that publishes the releases ("usuario/repo"). Can be overridden in wp-config.php.
-// Private repo → each site also needs: define( 'ICB_GITHUB_TOKEN', 'github_pat_...' ); in wp-config.php.
+// Public GitHub repo that publishes the releases ("usuario/repo"). Sites update from it with
+// no configuration. Optional: define ICB_GITHUB_TOKEN in wp-config.php only if the repo is
+// ever made private again.
 if ( ! defined( 'ICB_GITHUB_REPO' ) ) {
 	define( 'ICB_GITHUB_REPO', 'javierlopezcamin-arch/inpulsia-consent-bridge' );
 }

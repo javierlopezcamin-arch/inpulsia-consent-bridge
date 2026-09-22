@@ -164,8 +164,8 @@ class ICB_Diagnostics {
 			$results[] = self::check(
 				'Actualizaciones desde GitHub',
 				$ok,
-				$value . ( ICB_Updater::has_token() ? ' · token OK' : ' · sin token' ),
-				'Repo privado: añade define( \'ICB_GITHUB_TOKEN\', \'github_pat_...\' ); en wp-config.php (token fine-grained, solo este repo, Contents: Read-only). Comprueba también que hay al menos una release publicada.',
+				$value . ( ICB_Updater::has_token() ? ' · con token' : '' ),
+				'Comprueba que el repo es público y tiene al menos una release publicada. Si el repo es privado, añade define( \'ICB_GITHUB_TOKEN\', \'github_pat_...\' ); en wp-config.php.',
 				'warning'
 			);
 		}

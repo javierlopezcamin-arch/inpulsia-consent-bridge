@@ -118,15 +118,13 @@ ACTUALIZACIONES DESDE GITHUB
   WordPress, como cualquier plugin de wordpress.org, leyendo las
   releases del repositorio de GitHub.
 
-  CONFIGURACIÓN (una vez por web — repo privado)
-    Añade en wp-config.php, encima de "That's all, stop editing!":
+  Repositorio público:
+    https://github.com/javierlopezcamin-arch/inpulsia-consent-bridge
 
-      define( 'ICB_GITHUB_TOKEN', 'github_pat_xxxxxxxx' );
-
-    El token es un "fine-grained personal access token" de GitHub:
-    Settings → Developer settings → Fine-grained tokens → Generate.
-    Repository access: solo este repo. Permissions → Contents:
-    Read-only. Nada más. Puedes usar el mismo token en todas las webs.
+  CONFIGURACIÓN
+    Ninguna. Las webs consultan las releases públicas sin token.
+    (Solo si el repo volviera a ser privado haría falta añadir
+    define( 'ICB_GITHUB_TOKEN', 'github_pat_...' ); en wp-config.php.)
 
   USO EN CADA WEB
     · Plugins → fila "Inpulsia Consent v2" → "Buscar actualización".
@@ -164,7 +162,8 @@ CHANGELOG
     aparece como actualizable en el panel de Plugins.
   · Enlace "Buscar actualización" en la fila del plugin y soporte
     del botón "Comprobar de nuevo" de Escritorio → Actualizaciones.
-  · Soporte de repo privado mediante ICB_GITHUB_TOKEN en wp-config.
+  · Repo público: las webs se actualizan sin token ni configuración
+    (ICB_GITHUB_TOKEN opcional si el repo pasara a privado).
   · Cabecera Update URI: wordpress.org nunca sobrescribe el plugin.
   · Nuevo check "Actualizaciones desde GitHub" en Diagnóstico.
 
