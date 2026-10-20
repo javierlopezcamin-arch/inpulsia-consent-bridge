@@ -43,7 +43,7 @@ class ICB_Frontend {
 			$default['region'] = [ 'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH' ];
 		}
 		?>
-<script id="icb-consent-default">
+<script id="icb-consent-default" data-category="functional">
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', <?php echo wp_json_encode( $default ); ?>);
@@ -68,7 +68,7 @@ console.log('[ICB] consent default applied', <?php echo wp_json_encode( $default
 		$health   = ! empty( $s['health_logging'] ) ? 'true' : 'false';
 		$ajax_url = admin_url( 'admin-ajax.php' );
 		?>
-<script id="icb-consent-listener">
+<script id="icb-consent-listener" data-category="functional">
 (function(){
 	var DEBUG    = <?php echo $debug; ?>;
 	var MAPPING  = <?php echo wp_json_encode( $mapping ); ?>;
@@ -328,7 +328,7 @@ console.log('[ICB] consent default applied', <?php echo wp_json_encode( $default
 		}
 		$ajax_url = admin_url( 'admin-ajax.php' );
 		?>
-<script id="icb-status-reporter">
+<script id="icb-status-reporter" data-category="functional">
 (function(){
 	var AJAX = <?php echo wp_json_encode( $ajax_url ); ?>;
 	function bool2val(b){ return b === true ? 'granted' : (b === false ? 'denied' : null); }

@@ -42,6 +42,25 @@ require_once ICB_PATH . 'includes/class-icb-woocommerce.php';
 require_once ICB_PATH . 'includes/class-icb-stape.php';
 require_once ICB_PATH . 'includes/class-icb-updater.php';
 
+/*
+ * "Meta pixel for WordPress" (official-facebook-pixel) creates the _fbp/_fbc cookies on the server,
+ * in the first response, before the visitor answers the cookie banner. Complianz cannot block a
+ * Set-Cookie header, so keep the plugin's signals held until Complianz records marketing consent.
+ * Registered at file load because that plugin runs its setup when its own file is included.
+ */
+add_filter( 'facebook_signals_held', 'icb_hold_meta_signals_until_consent' );
+
+function icb_hold_meta_signals_until_consent( $held ) {
+	if ( $held ) {
+		return true;
+	}
+	$opts = get_option( ICB_OPTION, [] );
+	if ( is_array( $opts ) && isset( $opts['meta_pixel_consent'] ) && ! $opts['meta_pixel_consent'] ) {
+		return $held;
+	}
+	return ! ( isset( $_COOKIE['cmplz_marketing'] ) && 'allow' === $_COOKIE['cmplz_marketing'] );
+}
+
 add_action( 'plugins_loaded', function () {
 	load_plugin_textdomain( 'inpulsia-consent-bridge', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	ICB_Plugin::instance()->init();

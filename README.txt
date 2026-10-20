@@ -157,6 +157,15 @@ CÓMO VERIFICAR QUE FUNCIONA
 CHANGELOG
 -------------------------------------------
 
+2.7.1 — Meta sin cookies antes del consentimiento
+  · Con "Meta pixel for WordPress", las cookies _fbp y _fbc ya no se
+    crean en el servidor hasta que Complianz registra el consentimiento
+    de marketing (filtro facebook_signals_held).
+  · Los scripts de consentimiento (icb-consent-default, listener y
+    status-reporter) se marcan como funcionales: Complianz ya no los
+    bloquea por contener "fbq", y el consentimiento de estadística
+    llega a Google aunque se rechace el de marketing.
+
 2.7.0 — Actualizaciones desde GitHub
   · Nuevo actualizador: el plugin consulta las GitHub Releases y
     aparece como actualizable en el panel de Plugins.
