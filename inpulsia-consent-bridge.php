@@ -3,7 +3,7 @@
  * Plugin Name:       Inpulsia Consent v2
  * Plugin URI:        https://inpulsia.es
  * Description:       Puente de Google Consent Mode v2 entre Complianz y Google Site Kit / GTM. Propaga el consentimiento a Google, Meta y TikTok, añade eventos GA4 y Meta para WooCommerce, Enhanced Conversions, sGTM (Stape), diagnóstico, salud del consent y auditoría RGPD.
- * Version:           2.7.0
+ * Version:           2.7.1
  * Author:            Inpulsia
  * Author URI:        https://inpulsia.es
  * License:           GPL-2.0-or-later
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ICB_VERSION', '2.7.0' );
+define( 'ICB_VERSION', '2.7.1' );
 
 // Public GitHub repo that publishes the releases ("usuario/repo"). Sites update from it with
 // no configuration. Optional: define ICB_GITHUB_TOKEN in wp-config.php only if the repo is

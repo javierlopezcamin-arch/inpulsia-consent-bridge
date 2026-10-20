@@ -3,7 +3,7 @@
   Consent Mode v2 + Medición sin fricción
 ===========================================
 
-Versión: 2.7.0
+Versión: 2.7.1
 Requisitos: WordPress 5.8+ · PHP 7.4+
 Compatible con: Complianz · Google Site Kit · GTM · WooCommerce · Stape · Meta Pixel · TikTok Pixel
 
